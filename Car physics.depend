@@ -14,3 +14,18 @@
 1462979089 source:c:\users\andrei\desktop\car physics\src\car.cpp
 	"Car.h"
 
+1462992461 source:c:\users\cristi\desktop\car-physics\main.cpp
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+	<sstream>
+	"Car.h"
+
+1462992311 c:\users\cristi\desktop\car-physics\include\car.h
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+
+1462992473 source:c:\users\cristi\desktop\car-physics\src\car.cpp
+	"Car.h"
+

@@ -18,24 +18,13 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Vehicle Handling");
 	sf::Clock deltaClock, frameClock;
 	window.setFramerateLimit(60);
-	//set up visual for vehicle
-	sf::View view(sf::FloatRect(100, 100, 200, 100));
-    view.setSize(sf::Vector2f(window.getSize().x,window.getSize().y));
-    view.setCenter(sf::Vector2f(view.getSize().x,view.getSize().y));
-    window.setView(view);
     Car car;
-    sf::Texture backTexture;
-    if (!backTexture.loadFromFile("background2.jpg"))
-        return EXIT_FAILURE;
-    sf::Sprite background(backTexture);
-    background.setScale(3,3);
-
-
-	//-----------------------------------//
-
+    sf::Texture backgroudTexture;
+    backgroudTexture.loadFromFile("background2.jpg");
+    sf::Sprite backgroundSprite(backgroudTexture);
+    backgroundSprite.setScale(3,3);
 	while(window.isOpen())
 	{
-		//poll input
 		sf::Event event;
 		while(window.pollEvent(event))
 		{
@@ -43,27 +32,17 @@ int main()
 				|| (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
 				window.close();
         }
-		//------------------------
-		float dt = deltaClock.restart().asSeconds();
-
-        car.updateMovement(dt);
-
+		float deltaTime = deltaClock.restart().asSeconds();
 		frameClock.restart();
-
 		window.clear();
-		window.draw(background);
-		window.draw(car.carShape);
-		view.setCenter(car.carShape.getPosition());
-		window.setView(view);
+		window.draw(backgroundSprite);
+
+		car.checkInputs(deltaTime);
+		car.drawCarInWindow(window);
+
 		window.display();
-
-
-
-		//----------------------
 		const float time = 1.f / frameClock.getElapsedTime().asSeconds();
-		std::stringstream stream;
-		stream << "Current fps: " << time << std::endl;
-		window.setTitle(stream.str());
+		window.setTitle("Titlu");
 	}
 
 	return 0;
