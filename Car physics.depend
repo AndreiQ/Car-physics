@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1462979504 source:c:\users\andrei\desktop\car physics\main.cpp
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+	<sstream>
+	"Car.h"
+
+1462979600 c:\users\andrei\desktop\car physics\include\car.h
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+
+1462979089 source:c:\users\andrei\desktop\car physics\src\car.cpp
+	"Car.h"
+
